@@ -1,2 +1,11 @@
 # Student-Marks-Analyzer
 A simple database project to store student names and marks, calculate averages, find highest/lowest marks, and assign letter grades.
+create Database Analyzer;
+create table student (SINo int primary key, StudentName varchar(20), Marks int);
+INSERT INTO student VALUES (1,"Ryan Garcia", 70);
+INSERT INTO student VALUES (2,"Leon Kennedy", 89);
+INSERT INTO student VALUES (3,"James Gunther", 49);
+select AVG(mark) AS average_marks FROM student;
+select MAX(Marks) AS Highest_mark from student;
+select MIN(Marks) AS Lowest_mark from student;
+SELECT StudentName, Marks, CASE WHEN Marks >= 90 THEN 'A' WHEN Marks >= 70 THEN 'B' WHEN Marks >= 50 THEN 'C' ELSE 'D' END AS GRADE FROM student;
